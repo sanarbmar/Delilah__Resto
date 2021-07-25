@@ -1,8 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+
 const productos = express.Router();
-productos.use(bodyParser.urlencoded({ extended: false }));
-productos.use(bodyParser.json());
+
 
 let productosArray =
 {

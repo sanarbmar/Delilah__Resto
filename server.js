@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');/**borrar de todos los endpoint */
 const usuarios = require('./routers/Usuarios');
 const productos = require('./routers/Productos');
 const pedidos = require('./routers/Pedidos');

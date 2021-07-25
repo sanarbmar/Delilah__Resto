@@ -1,8 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+
 const pedidos = express.Router();
-pedidos.use(bodyParser.urlencoded({ extended: false }));
-pedidos.use(bodyParser.json());
+
 
 let pedidosArray =
 {

@@ -1,8 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+
 const usuarios = express.Router();
-usuarios.use(bodyParser.urlencoded({ extended: false }));
-usuarios.use(bodyParser.json());
+
 let usuariosArray =
 {
     nombre: '',
@@ -24,6 +23,7 @@ usuarios.get('/', (req, res) => {
     res.status(404);
     res.json(respuesta);
 });
+/**poner en un router (index js) */
 
 usuarios.get('/usuarios', (req, res) => {
     //Inicializamos la respuesta
