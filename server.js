@@ -11,17 +11,11 @@ appServer.listen(2500, () => {
     console.log("Esta Conectado al Servidor");
 });
 /**ENDOPINT USUARIOS */
-appServer.get('/usuarios', usuarios);
-appServer.post('/usuarios',usuarios);
-appServer.put('/usuarios', usuarios);
-appServer.delete('/usuarios', usuarios);
+
+appServer.use('/usuarios',usuarios);
 /**ENDPOINT PRODUCTOS  */
-appServer.get('/productos', productos);
-appServer.post('/productos',productos);
-appServer.put('/productos', productos);
-appServer.delete('/productos', productos);
+
+appServer.use('/productos',productos);
 /**ENDPOINT PEDIDOS */
-appServer.get('/pedidos', pedidos);
-appServer.post('/pedidos',pedidos);
-appServer.put('/pedidos', pedidos);
-appServer.delete('/pedidos', pedidos);
+
+appServer.use('/pedidos',pedidos);

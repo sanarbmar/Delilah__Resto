@@ -14,18 +14,8 @@ let respuesta = {
     codigo: 200,
     mensaje: ''
 };
-pedidos.get('/', (req, res) => {
-    //Creamos la respuesta
-    respuesta = {
-        error: true,
-        codigo: 404,
-        mensaje: 'Punto de inicio'
-    };
-    res.status(404);
-    res.json(respuesta);
-});
 
-pedidos.get('/pedidos', (req, res) => {
+pedidos.get('/', (req, res) => {
     //Inicializamos la respuesta
     respuesta = {
         error: false,
@@ -52,7 +42,7 @@ pedidos.get('/pedidos', (req, res) => {
     res.send(respuesta);
 });
 
-pedidos.post('/pedidos', (req, res) => {
+pedidos.post('/', (req, res) => {
     console.log('nombre: ', req.body.nombre);
     console.log('total: ', req.body.total);
     if (!req.body.nombre || !req.body.total) {
@@ -87,7 +77,7 @@ pedidos.post('/pedidos', (req, res) => {
     res.send(respuesta);
 });
 
-pedidos.put('/pedidos', (req,res) => {
+pedidos.put('/', (req,res) => {
     if (!req.body.nombre || !req.body.total) {
         respuesta = {
             error: true,
@@ -120,7 +110,7 @@ pedidos.put('/pedidos', (req,res) => {
     res.send(respuesta);
 });
 
-pedidos.delete('/pedidos', (req,res) => {
+pedidos.delete('/', (req,res) => {
     //si no existe el pedido 
     if (pedidosArray.nombre === '' || pedidosArray.total === '') {
         respuesta = {

@@ -13,19 +13,9 @@ let respuesta = {
     codigo: 200,
     mensaje: ''
 };
-usuarios.get('/', (req, res) => {
-    //Creamos la respuesta
-    respuesta = {
-        error: true,
-        codigo: 404,
-        mensaje: 'Punto de inicio'
-    };
-    res.status(404);
-    res.json(respuesta);
-});
-/**poner en un router (index js) */
 
-usuarios.get('/usuarios', (req, res) => {
+
+usuarios.get('/', (req, res) => {
     //Inicializamos la respuesta
     respuesta = {
         error: false,
@@ -52,7 +42,7 @@ usuarios.get('/usuarios', (req, res) => {
     res.send(respuesta);
 });
 
-usuarios.post('/usuarios', (req, res) => {
+usuarios.post('/', (req, res) => {
     console.log('nombre: ', req.body.nombre);
     console.log('direccion: ', req.body.direccion);
     if (!req.body.nombre || !req.body.direccion) {
@@ -87,7 +77,7 @@ usuarios.post('/usuarios', (req, res) => {
     res.send(respuesta);
 });
 
-usuarios.put('/usuarios', (req,res) => {
+usuarios.put('/', (req,res) => {
     if (!req.body.nombre || !req.body.direccion) {
         respuesta = {
             error: true,
@@ -120,7 +110,7 @@ usuarios.put('/usuarios', (req,res) => {
     res.send(respuesta);
 });
 
-usuarios.delete('/usuarios', (req,res) => {
+usuarios.delete('/', (req,res) => {
     //si no existe el usuario 
     if (usuariosArray.nombre === '' || usuariosArray.direccion === '') {
         respuesta = {

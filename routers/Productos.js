@@ -14,18 +14,9 @@ let respuesta = {
     codigo: 200,
     mensaje: ''
 };
-productos.get('/', (req, res) => {
-    //Creamos la respuesta
-    respuesta = {
-        error: true,
-        codigo: 404,
-        mensaje: 'Punto de inicio'
-    };
-    res.status(404);
-    res.json(respuesta);
-});
 
-productos.get('/productos', (req, res) => {
+
+productos.get('/', (req, res) => {
     //Inicializamos la respuesta
     respuesta = {
         error: false,
@@ -52,7 +43,7 @@ productos.get('/productos', (req, res) => {
     res.send(respuesta);
 });
 
-productos.post('/productos', (req, res) => {
+productos.post('/', (req, res) => {
     console.log('nombre: ', req.body.nombre);
     console.log('estado: ', req.body.estado);
     if (!req.body.nombre || !req.body.estado) {
@@ -87,7 +78,7 @@ productos.post('/productos', (req, res) => {
     res.send(respuesta);
 });
 
-productos.put('/productos', (req,res) => {
+productos.put('/', (req,res) => {
     if (!req.body.nombre || !req.body.estado) {
         respuesta = {
             error: true,
@@ -120,7 +111,7 @@ productos.put('/productos', (req,res) => {
     res.send(respuesta);
 });
 
-productos.delete('/productos', (req,res) => {
+productos.delete('/', (req,res) => {
     //si no existe el producto 
     if (productosArray.nombre === '' || productosArray.estado === '') {
         respuesta = {
